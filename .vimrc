@@ -64,16 +64,17 @@ set wildignore+=target
 " Rust auto complete
 set hidden
 let g:racer_cmd = "/Users/jake/other/racer/bin/racer"
-let $RUST_SRC_PATH="/Users/jake/other/rust/src:/Users/jake/.cargo/git/checkouts/mio-8731c946209c11b6/master/src"
+let $RUST_SRC_PATH="/Users/jake/other/rust/src:/Users/jake/work/xl/chat/server/src:/Users/jake/.cargo/git/checkouts/mio-8730c946209c11b6/master/src"
+let g:racer_experimental_completer = 1
 let g:rust_recommended_style = 0
 map <f12> gd
 " build system
 set makeprg=cargo
 map <f4> :cn<cr>
 map <s-f4> :cp<cr>
-map <f7> :make build<cr>:cw<cr>
-inoremap <f7> <esc>:make build<cr>:cw<cr>
-map <s-f7> :make test<cr>:cw<cr>
+map <f7> :make build<bar>:cw<cr>
+inoremap <f7> <esc>:make build<bar>:cw<cr>
+map <s-f7> :make test<bar>:cw<cr>
 inoremap <s-f7> <esc>:make test<cr>
 " save when focus is lost
 au FocusLost * :wa
@@ -91,6 +92,10 @@ map <c-l> 20<c-w>+
 " command-t
 nnoremap <silent> <leader>b :CommandTMRU<CR>
 let g:CommandTTraverseSCM = 'pwd'
+map <d-t> :CommandT<cr>
+map <leader>t :CommandT<cr>
 " comment
 nmap <d-/> gcc
 vmap <d-/> gc
+" find in files
+map <D-F> :vimgrep "<c-r><c-w>" **/*.rs<left><left><left><left><left><left><left><left><left>
