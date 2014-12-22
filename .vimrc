@@ -72,10 +72,10 @@ map <f12> gd
 set makeprg=cargo
 map <f4> :cn<cr>
 map <s-f4> :cp<cr>
-map <f7> :make build<bar>:cw<cr>
-inoremap <f7> <esc>:make build<bar>:cw<cr>
-map <s-f7> :make test<bar>:cw<cr>
-inoremap <s-f7> <esc>:make test<cr>
+map <s-f7> :make build<bar>:cw<cr>
+inoremap <s-f7> <esc>:make build<bar>:cw<cr>
+map <f7> :make test -- --nocapture<bar>:cw<cr>
+inoremap <f7> <esc>:make test -- --nocapture<cr>
 " save when focus is lost
 au FocusLost * :wa
 " Execute current line or current selection as Vim EX commands.
@@ -84,11 +84,6 @@ vnoremap <F11> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
 " buffer navigation
 map <d-0> :bn<cr>
 map <d-9> :bp<cr>
-" window navigation
-map <c-j> <c-w>w
-map <c-k> <c-w>W
-map <d-1> <c-w>o
-map <c-l> 20<c-w>+
 " command-t
 nnoremap <silent> <leader>b :CommandTMRU<CR>
 let g:CommandTTraverseSCM = 'pwd'
@@ -99,3 +94,44 @@ nmap <d-/> gcc
 vmap <d-/> gc
 " find in files
 map <D-F> :vimgrep "<c-r><c-w>" **/*.rs<left><left><left><left><left><left><left><left><left>
+" window movement
+function! WinMove(key) 
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr()) "we havent moved
+    if (match(a:key,'[jk]')) "were we going up/down
+      wincmd v
+    else 
+      wincmd s
+    endif
+    exec "wincmd ".a:key
+  endif
+endfunction
+
+function! CloseOther() 
+  let t:curwin = winnr()
+  while 1 
+    exec "wincmd j"
+    if (t:curwin == winnr()) "we havent moved
+      break
+    else
+      wincmd c
+      let t:curwin = winnr()
+    endif
+  endwhile
+  while 1 
+    exec "wincmd k"
+    if (t:curwin == winnr()) "we havent moved
+      break
+    else
+      wincmd c
+      let t:curwin = winnr()
+    endif
+  endwhile
+endfunction
+ 
+map <c-h> :call WinMove('h')<cr>
+map <c-k> :call WinMove('k')<cr>
+map <c-l> :call WinMove('l')<cr>
+map <c-j> :call WinMove('j')<cr>
+map <d-1> :call CloseOther()<cr>
