@@ -71,6 +71,7 @@ map <f12> gd
 " build system
 set makeprg=cargo
 map <f4> :cn<cr>
+inoremap <f4> <esc>:cn<cr>
 map <s-f4> :cp<cr>
 map <s-f7> :make build<bar>:cw<cr>
 inoremap <s-f7> <esc>:make build<bar>:cw<cr>
@@ -89,6 +90,7 @@ nnoremap <silent> <leader>b :CommandTMRU<CR>
 let g:CommandTTraverseSCM = 'pwd'
 map <d-t> :CommandT<cr>
 map <leader>t :CommandT<cr>
+map <c-p> :CommandT<cr>
 " comment
 nmap <d-/> gcc
 vmap <d-/> gc
