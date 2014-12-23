@@ -28,6 +28,10 @@ Plugin 'ervandew/supertab'
 Plugin 'wincent/command-t'
 " tcomment
 Plugin 'tomtom/tcomment_vim'
+" Coffeescript
+Plugin 'kchmck/vim-coffee-script'
+" LESS
+Plugin 'groenewege/vim-less'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
