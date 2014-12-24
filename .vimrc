@@ -103,9 +103,7 @@ map <d-9> :bp<cr>
 " command-t
 nnoremap <silent> <leader>b :CommandTMRU<CR>
 let g:CommandTTraverseSCM = 'pwd'
-map <d-t> :CommandT<cr>
-map <leader>t :CommandT<cr>
-map <c-p> :CommandT<cr>
+map <d-O> :CommandT<cr>
 " comment
 nmap <d-/> gcc
 vmap <d-/> gc
