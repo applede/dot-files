@@ -49,6 +49,7 @@ filetype plugin indent on    " required
 let mapleader=','
 set autowriteall
 let g:molokai_original = 1
+set background=dark
 colorscheme gruvbox
 set number
 set scrolloff=5
@@ -111,7 +112,7 @@ vmap <d-/> gc
 " find in files
 map <D-F> :vimgrep "<c-r><c-w>" **/*.rs<left><left><left><left><left><left><left><left><left>
 " window movement
-function! WinMove(key) 
+function! WinMove(key)
   let t:curwin = winnr()
   exec "wincmd ".a:key
   if (t:curwin == winnr()) "we havent moved
