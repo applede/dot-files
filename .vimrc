@@ -32,6 +32,13 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'kchmck/vim-coffee-script'
 " LESS
 Plugin 'groenewege/vim-less'
+" jade
+Plugin 'digitaltoad/vim-jade'
+" bufexplorer
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'wavded/vim-stylus'
+Plugin 'chankaward/vim-railscasts-theme'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +49,7 @@ filetype plugin indent on    " required
 let mapleader=','
 set autowriteall
 let g:molokai_original = 1
-colorscheme molokai
+colorscheme gruvbox
 set number
 set scrolloff=5
 set incsearch
@@ -59,7 +66,10 @@ set linespace=1
 " NERD Tree
 autocmd vimenter * NERDTree
 map <f1> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
+" BufExplorer
+nnoremap <silent> <F2> :BufExplorer<CR>
+nnoremap <F3> :bd<cr>
 " ctrlp
 let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_cmd = 'CtrlPBuffer'
