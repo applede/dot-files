@@ -108,7 +108,7 @@ map <d-O> :CommandT<cr>
 nmap <d-/> gcc
 vmap <d-/> gc
 " find in files
-map <D-F> :vimgrep "<c-r><c-w>" **/*.rs<left><left><left><left><left><left><left><left><left>
+map <D-F> :vimgrep "" **/*.rs<left><left><left><left><left><left><left><left><left>
 " window movement
 function! WinMove(key)
   let t:curwin = winnr()
