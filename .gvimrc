@@ -1,4 +1,4 @@
-set guifont=Consolas:h14
+set guifont=Consolas:h13
 set lines=85
 set columns=140
 macm File.New\ Tab key=<nop>
