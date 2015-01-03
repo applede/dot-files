@@ -36,9 +36,21 @@ Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-jade'
 " bufexplorer
 Plugin 'jlanzarotta/bufexplorer'
+" stylus mode
 Plugin 'wavded/vim-stylus'
+" slim mode
+Plugin 'slim-template/vim-slim'
+
+" color schemes
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
+Plugin 'MichaelMalick/vim-colors-bluedrake'
+Plugin 'croaky/vim-colors-github'
+Plugin 'baskerville/bubblegum'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'marlun/vim-starwars'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'nanotech/jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,7 +62,10 @@ let mapleader=','
 set autowriteall
 let g:molokai_original = 1
 set background=dark
-colorscheme gruvbox
+let g:seoul256_background = 236
+let g:jellybeans_background_color = "2a2a2a"
+colorscheme jellybeans
+" colorscheme Tomorrow-Night-Eighties
 set number
 set scrolloff=5
 set incsearch
@@ -116,16 +131,16 @@ function! WinMove(key)
   if (t:curwin == winnr()) "we havent moved
     if (match(a:key,'[jk]')) "were we going up/down
       wincmd v
-    else 
+    else
       wincmd s
     endif
     exec "wincmd ".a:key
   endif
 endfunction
 
-function! CloseOther() 
+function! CloseOther()
   let t:curwin = winnr()
-  while 1 
+  while 1
     exec "wincmd j"
     if (t:curwin == winnr()) "we havent moved
       break
@@ -134,7 +149,7 @@ function! CloseOther()
       let t:curwin = winnr()
     endif
   endwhile
-  while 1 
+  while 1
     exec "wincmd k"
     if (t:curwin == winnr()) "we havent moved
       break
@@ -144,7 +159,7 @@ function! CloseOther()
     endif
   endwhile
 endfunction
- 
+
 map <c-h> :call WinMove('h')<cr>
 map <c-k> :call WinMove('k')<cr>
 map <c-l> :call WinMove('l')<cr>
