@@ -1,0 +1,17 @@
+[
+	{ "keys": ["f7"],
+	  "command": "run_multiple_commands",
+	  "args": {
+	  	"commands": [
+	  	  {"command": "build", "context": "window"},
+	  	]
+	  }
+  },
+  { "keys": ["shift+f7"], "command": "build", "args": {"variant": "Test"}},
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{
+    "command": "navigate_to_definition",
+    "keys": ["ctrl+]"]
+  },
+]

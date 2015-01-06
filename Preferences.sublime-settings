@@ -1,0 +1,26 @@
+{
+	"color_scheme": "Packages/Colorsublime - Themes/MonokaiEasyForRetina.tmTheme",
+	"file_exclude_patterns":
+	[
+		".tags",
+		".tags_sorted_by_file",
+		".gemtags"
+	],
+	"font_face": "Consolas",
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		100
+	],
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+	"tabs_small": true,
+	"theme": "Numix Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
