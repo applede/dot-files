@@ -38,6 +38,10 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'wavded/vim-stylus'
 Plugin 'chankaward/vim-railscasts-theme'
+Plugin '29decibel/codeschool-vim-theme'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'sickill/vim-monokai'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
@@ -50,7 +54,7 @@ let mapleader=','
 set autowriteall
 let g:molokai_original = 1
 set background=dark
-colorscheme gruvbox
+colorscheme molokai
 set number
 set scrolloff=5
 set incsearch
@@ -116,16 +120,16 @@ function! WinMove(key)
   if (t:curwin == winnr()) "we havent moved
     if (match(a:key,'[jk]')) "were we going up/down
       wincmd v
-    else 
+    else
       wincmd s
     endif
     exec "wincmd ".a:key
   endif
 endfunction
 
-function! CloseOther() 
+function! CloseOther()
   let t:curwin = winnr()
-  while 1 
+  while 1
     exec "wincmd j"
     if (t:curwin == winnr()) "we havent moved
       break
@@ -134,7 +138,7 @@ function! CloseOther()
       let t:curwin = winnr()
     endif
   endwhile
-  while 1 
+  while 1
     exec "wincmd k"
     if (t:curwin == winnr()) "we havent moved
       break
@@ -144,7 +148,7 @@ function! CloseOther()
     endif
   endwhile
 endfunction
- 
+
 map <c-h> :call WinMove('h')<cr>
 map <c-k> :call WinMove('k')<cr>
 map <c-l> :call WinMove('l')<cr>
