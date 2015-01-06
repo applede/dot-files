@@ -1,5 +1,11 @@
 {
 	"color_scheme": "Packages/Colorsublime - Themes/MonokaiEasyForRetina.tmTheme",
+	"file_exclude_patterns":
+	[
+		".tags",
+		".tags_sorted_by_file",
+		".gemtags"
+	],
 	"font_face": "Consolas",
 	"font_size": 14,
 	"highlight_line": true,
@@ -16,6 +22,5 @@
 	"tab_size": 2,
 	"tabs_small": true,
 	"theme": "Numix Dark.sublime-theme",
-	"file_exclude_patterns": [".tags", ".tags_sorted_by_file", ".gemtags"],
 	"translate_tabs_to_spaces": true
 }
