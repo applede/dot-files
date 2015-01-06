@@ -39,6 +39,9 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'wavded/vim-stylus'
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
+Plugin 'vim-scripts/darktango.vim'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,8 +52,8 @@ filetype plugin indent on    " required
 let mapleader=','
 set autowriteall
 let g:molokai_original = 1
-set background=dark
-colorscheme gruvbox
+set background=light
+colorscheme solarized
 set number
 set scrolloff=5
 set incsearch
