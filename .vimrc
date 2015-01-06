@@ -7,27 +7,31 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-" molokai
-Plugin 'tomasr/molokai'
-" ctrlp
-"Plugin 'kien/ctrlp.vim'
 " Airline
 Plugin 'bling/vim-airline'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 " git
 Plugin 'tpope/vim-fugitive'
-" Rust
-Plugin 'wting/rust.vim'
 " supertab
 Plugin 'ervandew/supertab'
+" syntax check
+Plugin 'scrooloose/syntastic'
+" taglist
+Plugin 'vim-scripts/taglist.vim'
 " tiled window management
 "Plugin 'spolu/dwm.vim'
 "Plugin 'sjbach/lusty'
-" Command T
-Plugin 'wincent/command-t'
+
+" Command T, FuzzyFinder, ctrlp
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'wincent/command-t'
+Plugin 'L9'
+Plugin 'vim-scripts/FuzzyFinder'
 " tcomment
 Plugin 'tomtom/tcomment_vim'
+
+" Language support
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
 " LESS
@@ -40,6 +44,8 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'wavded/vim-stylus'
 " slim mode
 Plugin 'slim-template/vim-slim'
+" Rust
+Plugin 'wting/rust.vim'
 
 " color schemes
 Plugin 'chankaward/vim-railscasts-theme'
@@ -54,7 +60,12 @@ Plugin 'baskerville/bubblegum'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'marlun/vim-starwars'
 Plugin 'junegunn/seoul256.vim'
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'Sorcerer'
+Plugin 'romainl/Apprentice'
+Plugin 'jnurmine/Zenburn'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'file:///Users/jake/hobby/monokai-easy'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,9 +77,9 @@ let mapleader=','
 set autowriteall
 let g:molokai_original = 1
 set background=dark
-let g:seoul256_background = 236
+let g:seoul256_background = 235
 let g:jellybeans_background_color = "2a2a2a"
-colorscheme jellybeans
+colorscheme monokai-easy
 " colorscheme Tomorrow-Night-Eighties
 set number
 set scrolloff=5
@@ -84,12 +95,20 @@ set cursorline
 "set colorcolumn=100
 set linespace=1
 " NERD Tree
-autocmd vimenter * NERDTree
-map <f1> :NERDTreeToggle<CR>
+" autocmd vimenter * NERDTree
 " let NERDTreeQuitOnOpen=1
 " BufExplorer
-nnoremap <silent> <F2> :BufExplorer<CR>
-nnoremap <F3> :bd<cr>
+" nnoremap <silent> <F2> :BufExplorer<CR>
+let g:fuf_coveragefile_globPatterns=['**/*.rs', '**/*.toml']
+let g:fuf_modesDisable = [ 'mrucmd', ]
+nnoremap <F1> :TlistOpen<CR>
+nnoremap <F2> :FufBuffer<CR>
+nnoremap <F3> :FufCoverageFile<CR>
+" nnoremap <F3> :bd<cr>
+" taglist
+set tags+=~/other/rust/TAGS.vi
+let Tlist_Enable_Fold_Column = 0
+let tlist_rust_settings='rust;g:Enums;T:Types;s:Structures;t:Traits;d:Macros;f:Functions'
 " ctrlp
 let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -169,3 +188,5 @@ map <c-k> :call WinMove('k')<cr>
 map <c-l> :call WinMove('l')<cr>
 map <c-j> :call WinMove('j')<cr>
 map <d-1> :call CloseOther()<cr>
+" show highlight group
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
