@@ -36,13 +36,25 @@ Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-jade'
 " bufexplorer
 Plugin 'jlanzarotta/bufexplorer'
+" stylus mode
 Plugin 'wavded/vim-stylus'
+" slim mode
+Plugin 'slim-template/vim-slim'
+
+" color schemes
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin '29decibel/codeschool-vim-theme'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+Plugin 'MichaelMalick/vim-colors-bluedrake'
+Plugin 'croaky/vim-colors-github'
+Plugin 'baskerville/bubblegum'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'marlun/vim-starwars'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'nanotech/jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,7 +66,10 @@ let mapleader=','
 set autowriteall
 let g:molokai_original = 1
 set background=dark
-colorscheme molokai
+let g:seoul256_background = 236
+let g:jellybeans_background_color = "2a2a2a"
+colorscheme jellybeans
+" colorscheme Tomorrow-Night-Eighties
 set number
 set scrolloff=5
 set incsearch
