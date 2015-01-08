@@ -14,4 +14,8 @@
     "command": "navigate_to_definition",
     "keys": ["ctrl+]"]
   },
+  {
+    "command": "rebuild_tags",
+    "keys": ["alt+r"]
+  },
 ]

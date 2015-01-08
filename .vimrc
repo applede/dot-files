@@ -18,7 +18,10 @@ Plugin 'ervandew/supertab'
 " syntax check
 " Plugin 'scrooloose/syntastic'
 " taglist
-Plugin 'vim-scripts/taglist.vim'
+" Plugin 'vim-scripts/taglist.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 " tiled window management
 "Plugin 'spolu/dwm.vim'
 "Plugin 'sjbach/lusty'
@@ -30,6 +33,8 @@ Plugin 'L9'
 Plugin 'vim-scripts/FuzzyFinder'
 " tcomment
 Plugin 'tomtom/tcomment_vim'
+" color picker
+Plugin 'KabbAmine/vCoolor.vim'
 
 " Language support
 " Coffeescript
@@ -101,15 +106,35 @@ set linespace=1
 " nnoremap <silent> <F2> :BufExplorer<CR>
 let g:fuf_coveragefile_globPatterns=['**/*.rs', '**/*.toml', '**/*.rb', '**/*.js', '**/*.css']
 let g:fuf_modesDisable = [ 'mrucmd', ]
-nnoremap <F1> :NERDTree<CR>
-nnoremap <s-F1> :TlistOpen<CR>
+nnoremap <F1> :NERDTreeToggle<CR>
 nnoremap <F2> :FufBuffer<CR>
 nnoremap <F3> :FufCoverageFile<CR>
 " nnoremap <F3> :bd<cr>
-" taglist
+" tag
 set tags+=~/other/rust/TAGS.vi
-let Tlist_Enable_Fold_Column = 0
-let tlist_rust_settings='rust;g:Enums;T:Types;s:Structures;t:Traits;d:Macros;f:Functions'
+let g:easytags_by_filetype = '~/.tags'
+let g:easytags_async = 1
+let g:tagbar_type_rust = {
+      \ 'ctagstype':'rust',
+      \ 'kinds':[
+        \ 'g:enums',
+        \ 'T:types',
+        \ 'd:macros',
+        \ 't:traits',
+        \ 's:structures',
+        \ 'i:traits implementations',
+        \ 'c:static',
+        \ 'm:modules',
+        \ 'f:functions'
+      \ ],
+      \ 'sort':0,
+    \ }
+
+nmap <F8> :TagbarToggle<CR>
+" let Tlist_Enable_Fold_Column = 0
+" let Tlist_Use_SingleClick = 1
+" nnoremap <F5> :!ctags -R<CR>
+" let tlist_rust_settings='rust;g:Enums;T:Types;s:Structures;t:Traits;d:Macros;f:Functions'
 " ctrlp
 let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_cmd = 'CtrlPBuffer'
