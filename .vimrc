@@ -16,7 +16,7 @@ Plugin 'tpope/vim-fugitive'
 " supertab
 Plugin 'ervandew/supertab'
 " syntax check
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 " taglist
 Plugin 'vim-scripts/taglist.vim'
 " tiled window management
@@ -64,7 +64,7 @@ Plugin 'Sorcerer'
 Plugin 'romainl/Apprentice'
 Plugin 'jnurmine/Zenburn'
 Plugin 'noahfrederick/vim-hemisu'
-Plugin 'file:///Users/jake/hobby/monokai-easy'
+Plugin 'applede/monokai-easy'
 Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
@@ -99,9 +99,10 @@ set linespace=1
 " let NERDTreeQuitOnOpen=1
 " BufExplorer
 " nnoremap <silent> <F2> :BufExplorer<CR>
-let g:fuf_coveragefile_globPatterns=['**/*.rs', '**/*.toml']
+let g:fuf_coveragefile_globPatterns=['**/*.rs', '**/*.toml', '**/*.rb', '**/*.js', '**/*.css']
 let g:fuf_modesDisable = [ 'mrucmd', ]
-nnoremap <F1> :TlistOpen<CR>
+nnoremap <F1> :NERDTree<CR>
+nnoremap <s-F1> :TlistOpen<CR>
 nnoremap <F2> :FufBuffer<CR>
 nnoremap <F3> :FufCoverageFile<CR>
 " nnoremap <F3> :bd<cr>
