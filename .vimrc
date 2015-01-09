@@ -79,6 +79,7 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 let mapleader=','
+set hidden
 set autowriteall
 let g:molokai_original = 1
 set background=dark
@@ -95,10 +96,13 @@ set expandtab
 set shiftwidth=2
 set ignorecase
 set smartcase
-set history=100
+set history=1000
 set cursorline
-"set colorcolumn=100
+" set colorcolumn=100
 set linespace=1
+set wildignore+=target
+set nobackup
+set noswapfile
 " NERD Tree
 " autocmd vimenter * NERDTree
 " let NERDTreeQuitOnOpen=1
@@ -139,9 +143,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_root_markers = ['Cargo.toml']
-set wildignore+=target
 " Rust auto complete
-set hidden
 let g:racer_cmd = "/Users/jake/other/racer/bin/racer"
 let $RUST_SRC_PATH="/Users/jake/other/rust/src:/Users/jake/work/xl/chat/server/src:/Users/jake/.cargo/git/checkouts/mio-8730c946209c11b6/master/src"
 let g:racer_experimental_completer = 1
