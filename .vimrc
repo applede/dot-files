@@ -21,7 +21,7 @@ Plugin 'ervandew/supertab'
 " Plugin 'vim-scripts/taglist.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " tiled window management
 "Plugin 'spolu/dwm.vim'
 "Plugin 'sjbach/lusty'
@@ -117,7 +117,7 @@ nnoremap <F3> :FufCoverageFile<CR>
 " tag
 set tags+=~/other/rust/TAGS.vi
 let g:easytags_by_filetype = '~/.tags'
-let g:easytags_async = 1
+" let g:easytags_async = 1
 let g:tagbar_type_rust = {
       \ 'ctagstype':'rust',
       \ 'kinds':[
@@ -133,8 +133,10 @@ let g:tagbar_type_rust = {
       \ ],
       \ 'sort':0,
     \ }
-
-nmap <F8> :TagbarToggle<CR>
+nmap <F5> :UpdateTags<CR>
+nmap <F8> :tn<CR>
+nmap <S-F8> :tp<CR>
+" nmap <F8> :TagbarToggle<CR>
 " let Tlist_Enable_Fold_Column = 0
 " let Tlist_Use_SingleClick = 1
 " nnoremap <F5> :!ctags -R<CR>
