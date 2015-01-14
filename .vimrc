@@ -51,6 +51,8 @@ Plugin 'wavded/vim-stylus'
 Plugin 'slim-template/vim-slim'
 " Rust
 Plugin 'wting/rust.vim'
+" Swift
+Plugin 'Keithbsmiley/swift.vim'
 
 " color schemes
 Plugin 'chankaward/vim-railscasts-theme'
