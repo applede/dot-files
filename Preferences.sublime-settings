@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/MonokaiEasyForRetina.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/monokate.tmTheme",
 	"file_exclude_patterns":
 	[
 		".tags",
@@ -22,5 +22,6 @@
 	"tab_size": 2,
 	"tabs_small": true,
 	"theme": "Numix Dark.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"vintageous_use_ctrl_keys": true
 }

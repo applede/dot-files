@@ -10,6 +10,8 @@
   { "keys": ["shift+f7"], "command": "build", "args": {"variant": "Test"}},
 	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol", "extend": false} },
 	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+  { "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+
 	{
     "command": "navigate_to_definition",
     "keys": ["ctrl+]"]
@@ -18,4 +20,6 @@
     "command": "rebuild_tags",
     "keys": ["alt+r"]
   },
+  { "keys": ["ctrl+h"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+l"], "command": "focus_group", "args": { "group": 1 } },
 ]
