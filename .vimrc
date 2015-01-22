@@ -158,10 +158,10 @@ set makeprg=cargo
 map <f4> :cn<cr>
 inoremap <f4> <esc>:cn<cr>
 map <s-f4> :cp<cr>
-map <s-f7> :make build<bar>:cw<cr>
-inoremap <s-f7> <esc>:make build<bar>:cw<cr>
-map <f7> :make test -- --nocapture<bar>:cw<cr>
-inoremap <f7> <esc>:make test -- --nocapture<cr>
+map <f7> :make build<bar>:cw<cr>
+inoremap <f7> <esc>:make build<bar>:cw<cr>
+map <s-f7> :make test -- --nocapture<bar>:cw<cr>
+inoremap <s-f7> <esc>:make test -- --nocapture<cr>
 " save when focus is lost
 au FocusLost * :wa
 " Execute current line or current selection as Vim EX commands.

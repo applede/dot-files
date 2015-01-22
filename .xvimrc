@@ -1,0 +1,7 @@
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+set pasteboard
+nmap <c-j> <c-w>w
+nmap <c-k> <c-w>W
