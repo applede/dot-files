@@ -21,7 +21,7 @@ Plugin 'ervandew/supertab'
 " Plugin 'vim-scripts/taglist.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " tiled window management
 "Plugin 'spolu/dwm.vim'
 "Plugin 'sjbach/lusty'
@@ -51,6 +51,8 @@ Plugin 'wavded/vim-stylus'
 Plugin 'slim-template/vim-slim'
 " Rust
 Plugin 'wting/rust.vim'
+" Swift
+Plugin 'Keithbsmiley/swift.vim'
 
 " color schemes
 Plugin 'chankaward/vim-railscasts-theme'
@@ -79,6 +81,7 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 let mapleader=','
+set hidden
 set autowriteall
 let g:molokai_original = 1
 set background=dark
@@ -95,10 +98,13 @@ set expandtab
 set shiftwidth=2
 set ignorecase
 set smartcase
-set history=100
+set history=1000
 set cursorline
-"set colorcolumn=100
+" set colorcolumn=100
 set linespace=1
+set wildignore+=target
+set nobackup
+set noswapfile
 " NERD Tree
 " autocmd vimenter * NERDTree
 " let NERDTreeQuitOnOpen=1
@@ -113,7 +119,7 @@ nnoremap <F3> :FufCoverageFile<CR>
 " tag
 set tags+=~/other/rust/TAGS.vi
 let g:easytags_by_filetype = '~/.tags'
-let g:easytags_async = 1
+" let g:easytags_async = 1
 let g:tagbar_type_rust = {
       \ 'ctagstype':'rust',
       \ 'kinds':[
@@ -129,8 +135,10 @@ let g:tagbar_type_rust = {
       \ ],
       \ 'sort':0,
     \ }
-
-nmap <F8> :TagbarToggle<CR>
+nmap <F5> :UpdateTags<CR>
+nmap <F8> :tn<CR>
+nmap <S-F8> :tp<CR>
+" nmap <F8> :TagbarToggle<CR>
 " let Tlist_Enable_Fold_Column = 0
 " let Tlist_Use_SingleClick = 1
 " nnoremap <F5> :!ctags -R<CR>
@@ -139,9 +147,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_root_markers = ['Cargo.toml']
-set wildignore+=target
 " Rust auto complete
-set hidden
 let g:racer_cmd = "/Users/jake/other/racer/bin/racer"
 let $RUST_SRC_PATH="/Users/jake/other/rust/src:/Users/jake/work/xl/chat/server/src:/Users/jake/.cargo/git/checkouts/mio-8730c946209c11b6/master/src"
 let g:racer_experimental_completer = 1
@@ -152,10 +158,10 @@ set makeprg=cargo
 map <f4> :cn<cr>
 inoremap <f4> <esc>:cn<cr>
 map <s-f4> :cp<cr>
-map <s-f7> :make build<bar>:cw<cr>
-inoremap <s-f7> <esc>:make build<bar>:cw<cr>
-map <f7> :make test -- --nocapture<bar>:cw<cr>
-inoremap <f7> <esc>:make test -- --nocapture<cr>
+map <f7> :make build<bar>:cw<cr>
+inoremap <f7> <esc>:make build<bar>:cw<cr>
+map <s-f7> :make test -- --nocapture<bar>:cw<cr>
+inoremap <s-f7> <esc>:make test -- --nocapture<cr>
 " save when focus is lost
 au FocusLost * :wa
 " Execute current line or current selection as Vim EX commands.

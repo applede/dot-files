@@ -20,6 +20,7 @@
     "command": "rebuild_tags",
     "keys": ["alt+r"]
   },
+  { "keys": ["j", "j"], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}] },
   { "keys": ["ctrl+h"], "command": "focus_group", "args": { "group": 0 } },
   { "keys": ["ctrl+l"], "command": "focus_group", "args": { "group": 1 } },
 ]
