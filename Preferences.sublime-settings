@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"color_scheme": "Packages/Colorsublime - Themes/monokate.tmTheme",
-=======
->>>>>>> FETCH_HEAD
 	"file_exclude_patterns":
 	[
 		".tags",
