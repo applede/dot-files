@@ -23,4 +23,24 @@
   { "keys": ["j", "j"], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}] },
   { "keys": ["ctrl+h"], "command": "focus_group", "args": { "group": 0 } },
   { "keys": ["ctrl+l"], "command": "focus_group", "args": { "group": 1 } },
+  { "keys": ["ctrl+super+h"], "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+        { "context": "window",
+          "command": "clone_file"},
+        { "context": "window",
+          "command": "move_to_group", "args": { "group": 0 }}
+      ]
+    }
+  },
+  { "keys": ["ctrl+super+l"], "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+        { "context": "window",
+          "command": "clone_file"},
+        { "context": "window",
+          "command": "move_to_group", "args": { "group": 1 }}
+      ]
+    }
+  }
 ]
