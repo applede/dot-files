@@ -53,6 +53,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'wting/rust.vim'
 " Swift
 Plugin 'Keithbsmiley/swift.vim'
+" Nim
+Plugin 'zah/nimrod.vim'
 
 " color schemes
 Plugin 'chankaward/vim-railscasts-theme'
@@ -73,6 +75,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'noahfrederick/vim-hemisu'
 Plugin 'applede/monokai-easy'
 Plugin 'tomasr/molokai'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,6 +83,8 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
+syntax on
+set mouse=a
 let mapleader=','
 set hidden
 set autowriteall
@@ -87,8 +92,8 @@ let g:molokai_original = 1
 set background=dark
 let g:seoul256_background = 235
 let g:jellybeans_background_color = "2a2a2a"
-colorscheme monokai-easy
-" colorscheme Tomorrow-Night-Eighties
+let base16colorspace=256
+colorscheme base16-eighties
 set number
 set scrolloff=5
 set incsearch
@@ -152,7 +157,6 @@ let g:racer_cmd = "/Users/jake/other/racer/bin/racer"
 let $RUST_SRC_PATH="/Users/jake/other/rust/src:/Users/jake/work/xl/chat/server/src:/Users/jake/.cargo/git/checkouts/mio-8730c946209c11b6/master/src"
 let g:racer_experimental_completer = 1
 let g:rust_recommended_style = 0
-map <f12> gd
 " build system
 set makeprg=cargo
 map <f4> :cn<cr>
@@ -222,3 +226,18 @@ map <c-j> :call WinMove('j')<cr>
 map <d-1> :call CloseOther()<cr>
 " show highlight group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" nim goto def
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  elseif &filetype == "rust"
+    exe "norm! gd"
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <f12> :call JumpToDef()<cr>
+ino <f12> <esc>:call JumpToDef()<cr>i
