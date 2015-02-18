@@ -47,7 +47,7 @@
     "keys": ["f9"],
     "command": "shell_command",
     "args": {
-      "command": "open ~/hobby/atomaid/atom-shell/AtoMaid.app"
+      "command": "open ~/hobby/atomaid/Maid.app"
     }
   }
 ]
