@@ -180,7 +180,9 @@ let g:CommandTTraverseSCM = 'pwd'
 map <d-O> :CommandT<cr>
 " comment
 nmap <d-/> gcc
+nmap <esc>/ gcc
 vmap <d-/> gc
+vmap <esc>/ gc
 " find in files
 map <D-F> :vimgrep "" **/*.rs<left><left><left><left><left><left><left><left><left>
 " window movement
@@ -239,5 +241,8 @@ fun! JumpToDef()
 endf
 
 " Jump to tag
-nn <f12> :call JumpToDef()<cr>
-ino <f12> <esc>:call JumpToDef()<cr>i
+nnoremap <f12> :call JumpToDef()<cr>
+inoremap <f12> <esc>:call JumpToDef()<cr>i
+
+nnoremap <f9> :silent execute "!open Maid.app" \| redraw!<cr>
+inoremap <f9> <esc>:silent execute "!open Maid.app" \| redraw!<cr>

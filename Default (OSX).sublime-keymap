@@ -47,7 +47,7 @@
     "keys": ["f9"],
     "command": "shell_command",
     "args": {
-      "command": "open ~/hobby/atomaid/Maid.app"
+      "command": "open ~/hobby/nwmaid/build/Maid/osx64/Maid.app"
     }
   }
 ]
