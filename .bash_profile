@@ -21,3 +21,5 @@ code () {
         open -a "Visual Studio Code" --args "$F"
     fi
 }
+
+export LC_CTYPE=ko_KR.UTF-8
