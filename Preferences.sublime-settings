@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Flatland Dark (SL).tmTheme",
 	"file_exclude_patterns":
 	[
 		".tags",
@@ -7,13 +7,13 @@
 		".gemtags",
 		".DS_Store"
 	],
-	"font_face": "Source Code Pro",
+	"font_face": "Fira Mono",
 	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"TypeScript",
-		"Vintage"
+		"Vintage",
+		"TypeScript"
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
@@ -26,6 +26,7 @@
 	"show_encoding": true,
 	"tab_size": 2,
 	"tabs_small": true,
+	"theme": "Flatland.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"vintageous_use_ctrl_keys": true
 }
