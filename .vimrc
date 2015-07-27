@@ -84,6 +84,8 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 syntax on
+set shell=/bin/bash
+let g:airline_powerline_fonts = 1
 set mouse=a
 let mapleader=','
 set hidden
