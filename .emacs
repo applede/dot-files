@@ -1,10 +1,11 @@
 					; Package manager
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
 					; Default font
-(add-to-list 'default-frame-alist '(font . "Consolas-14"))
+(add-to-list 'default-frame-alist '(font . "Fira Mono-14"))
 
 					; Default frame
 (add-to-list 'default-frame-alist '(height . 86))
