@@ -3,5 +3,8 @@ set ignorecase
 set smartcase
 set gdefault
 set pasteboard
+set blinkcursor
+nmap <c-h> <c-w>h
 nmap <c-j> <c-w>w
 nmap <c-k> <c-w>W
+nmap <c-l> <c-w>l

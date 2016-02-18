@@ -19,3 +19,5 @@ code () {
 export LC_CTYPE=ko_KR.UTF-8
 export SVN_EDITOR=vim
 export SVN_SSH='ssh -i /Users/jake/.ssh/jake.q5.svn.id_rsa -q'
+
+[ -s "/Users/jake/.dnx/dnvm/dnvm.sh" ] && . "/Users/jake/.dnx/dnvm/dnvm.sh" # Load dnvm
