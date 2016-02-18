@@ -46,7 +46,9 @@ values."
      osx
      html
      org
-     colors
+     (colors :variables
+             colors-enable-rainbow-identifiers t
+             colors-enable-nyan-cat-progress-bar (display-graphic-p))
      editorconfig
      themes-megapack
      perspectives
