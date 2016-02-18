@@ -95,7 +95,7 @@ set background=dark
 let g:seoul256_background = 235
 let g:jellybeans_background_color = "2a2a2a"
 " let base16colorspace=256
-colorscheme base16-eighties
+colorscheme monokai
 set number
 set scrolloff=5
 set incsearch
